@@ -121,7 +121,7 @@ public class Equity
                                           currentBalance=balance-amount;
                                           System.out.println("Enter Pin");
                                           pin=scanner.nextInt();
-                                          if(pin==2022 &&)
+                                          if(pin==2022 && amount<=balance)
                                           {   
                                           System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
                                           }
