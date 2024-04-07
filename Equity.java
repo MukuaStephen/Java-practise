@@ -16,9 +16,9 @@ public class Equity
              switch (choice)  
                 {  
                      case 1 :
-                          System.out.print("Enter phone no: ");
+                          System.out.println("Enter phone no:");
                           phone=scanner.nextDouble();
-                          System.out.print("Enter Amount: ");
+                          System.out.println("Enter Amount:");
                           amount=scanner.nextInt();
                           currentBalance=balance-amount;
                           System.out.println("Enter Pin: ");
