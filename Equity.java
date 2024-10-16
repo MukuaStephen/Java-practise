@@ -5,10 +5,18 @@ public class Equity
     {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Welcome to M-PESA");
-        int choice,amount,pin,option,agentNo,atmNo,paybill,balance,currentBalance;
-        double account,till,phone;
+        int choice,amount,pin,option,agentNo,atmNo,paybill,balance;
+        double account,till;
+        String phoneNumber;
         pin=2022;
         balance=20000;
+        till=54879;
+        account=1123357;
+        phoneNumber="+254742237930";
+        atmNo=19052;
+        agentNo=6000;
+        paybill=572572;
+        amount=2000;
 
     
             System.out.println("\t1.Send Money \n\t2.Withdraw Cash \n\t3. Buy Airtime \n\t4.Loans and Savings\n\t5.Lipa na M-PESA \n\t6.My Account");
@@ -16,21 +24,15 @@ public class Equity
              switch (choice)  
                 {  
                      case 1 :
-                          System.out.println("Enter phone no:");
-                          phone=scanner.nextDouble();
-                          System.out.println("Enter Amount:");
+                          System.out.println("Enter phone no: ");
+                          phoneNumber=scanner.nextLine();
+                        
+                          System.out.println("Enter Amount");
                           amount=scanner.nextInt();
-                          currentBalance=balance-amount;
-                          System.out.println("Enter Pin: ");
-                          pin=scanner.nextInt();
-                     if(pin==2022 &&  amount<=balance)
+                          System.out.println("Enter Pin");
+                          if(pin==2022)
                           {   
                           System.out.println("Your request is being proccessed...Please wait!");
-                          System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                          }
-                          else if(amount>balance)
-                          {
-                            System.out.println("Insufficient balance in your account...Please try a lower amount!");
                           }
                           else if (pin!=2022)
                           {
@@ -46,40 +48,25 @@ public class Equity
                                    agentNo=scanner.nextInt();
                                    System.out.println("Enter amount");
                                    amount=scanner.nextInt();
-                                   currentBalance=balance-amount;
                                    System.out.println("Enter Pin");
                                    pin=scanner.nextInt();
-                                   if(pin==2022 && amount<=balance)
+                                   if(pin==2022)
                                    {
-                                          System.out.println("Your request is being processed...Please wait");       
-                                          System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                   }
-                                   else if(amount>balance)
-                                   {
-                                       System.out.println("Insufficient balance in your account...Please try a lower amount!");
+                                          System.out.println("Your request is being processed...Please wait");                           
                                    }
                                    else if(pin!=2022)
                                    {
-                                          System.out.println("Incorrect pin...Try again!");
+                                          System.out.println("Incorrect pin...Try again");
                                    }
                             }
                             else if(option==2)
                             {
                                    System.out.println("Enter ATM No.");
                                    atmNo=scanner.nextInt();
-                                   System.out.println("Enter Amount!");
-                                   amount=scanner.nextInt();
-                                   currentBalance=balance-amount;
                                    System.out.println("Enter Pin");
-                                   pin=scanner.nextInt();
-                                   if(pin==2022 && amount<balance)
+                                   if(pin==2022)
                                    {
                                           System.out.println("Your request is being processed...Please wait!");
-                                          System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                   }
-                                   else if(amount>balance)
-                                   {
-                                          System.out.println("Insufficient balance in your account...Please try a lower amount!");
                                    }
                                    else if(pin!=2022)
 
@@ -94,18 +81,12 @@ public class Equity
                             if(option==1)
                             {
                                    System.out.println("Enter Amount");
-                                   amount=scanner.nextInt(); 
-                                   currentBalance=balance-amount;
+                                   amount=scanner.nextInt();
                                    System.out.println("Enter Pin");
                                    pin=scanner.nextInt();
-                                   if(pin==2022 &&amount<balance)
+                                   if(pin==2022)
                                    {
                                           System.out.println("Your request is being processed...Please wait!");
-                                          System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                   }
-                                   else if(amount>balance)
-                                   {
-                                          System.out.println("Insufficient balance...Please try a lower amount!");
                                    }
                                    else if(pin!=2022)
                                    {
@@ -114,20 +95,14 @@ public class Equity
                                    else if(option==2)
                                    {
                                           System.out.println("Enter the Phone number");
-                                          phone=scanner.nextDouble();
-                                          
+                                          String phone =scanner.nextLine();
                                           System.out.println("Enter Amount");
                                           amount=scanner.nextInt();
-                                          currentBalance=balance-amount;
                                           System.out.println("Enter Pin");
                                           pin=scanner.nextInt();
-                                          if(pin==2022 && amount<=balance)
+                                          if(pin==2022)
                                           {   
-                                          System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                          }
-                                          else if(amount>balance)
-                                          {
-                                                 System.out.println("Insufficient balance...Please try a lower amount!");
+                                          System.out.println("Confirmed,"+amount+"will be transferred to "+phone);
                                           }
                                           else if(pin!=2022)
                                           {
@@ -148,23 +123,16 @@ public class Equity
                             switch(option)
                             {
                                    case  1 :
-                                   System.out.println("Enter Paybill  Number: ");
+                                   System.out.println("Enter Paybill  Number and Account Number");
+                                   
                                    paybill=scanner.nextInt();
-                                   System.out.println("Enter Account Number: ");
+                                   System.out.println("Enter Account Number");
                                    account=scanner.nextDouble();
                                    System.out.println("Enter amount");
                                    amount=scanner.nextInt();
-                                   currentBalance=balance-amount;
-                                   System.out.println("Enter Pin: ");
-                                   pin=scanner.nextInt();
                                    if(pin==2022)
                                    {
                                    System.out.println("Amount Deposited Successfully!");
-                                   System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                   }
-                                   else if(amount>balance)
-                                   {
-                                          System.out.println("Insufficient balance...Please try a lower amount!");
                                    }
                                    else if(pin!=2022)
                                    {
@@ -177,18 +145,12 @@ public class Equity
                                    till=scanner.nextDouble();
                                    System.out.println("Enter Amount");
                                    amount=scanner.nextInt();
-                                   currentBalance=balance-amount;
                                    System.out.println("Enter Pin");
                                    pin=scanner.nextInt();
 
                                    if(pin==2022)
                                    {
                                           System.out.println("Confirmed,"+ amount +"has beeen sent");
-                                          System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                   }
-                                   else if(amount>balance)
-                                   {
-                                          System.out.println("Insufficient balance...Please try a lower amount!");
                                    }
                                    else if(pin!=2022)
                                    {
@@ -197,20 +159,12 @@ public class Equity
                                     break;
                                    case 3 :
                                    System.out.println("Enter Phone No");
-                                   phone=scanner.nextDouble();
-                                   System.out.println("Enter amount");
-                                   amount=scanner.nextInt();
-                                   currentBalance=balance-amount;
+                                   phoneNumber=scanner.nextLine();
                                    System.out.println("Enter Pin");
                                    pin=scanner.nextInt();
                                    if(pin==2022)
                                    {  
                                    System.out.println("Transaction is in process..Please wait!");
-                                   System.out.println("Successful transaction of ksh."+amount+".Your Current Balance is Ksh."+currentBalance+".");
-                                   }
-                                   else if(amount>balance)
-                                   {
-                                          System.out.println("Insufficient balance...Please try a lower amount!");
                                    }
                                    else if(pin!=2022)
                                    {
@@ -229,7 +183,7 @@ public class Equity
                             pin=scanner.nextInt();
                             if(pin==2022)
                             {
-                                   System.out.println("Your current Balance is ksh."+balance);
+                                   System.out.println("Your current Balance is "+balance);
                             }
                             else if(pin!=2022)
                             {
